@@ -486,6 +486,19 @@ alsa = {
 };
 ```
 
+Raspberry Pi with HiFiBerry DAC+, specifically using soundcard identified with `aplay -l` as `output_device`:
+```
+general = {
+  name = "HiFi";
+};
+
+alsa =
+{
+  output_device = "hw:sndrpihifiberry";
+  mixer_control_name = "Digital";
+};
+```
+
 For an NSLU2, which has no internal sound card, there appears to be a bug in ALSA — you can not specify a device other than "default". Thus:
 
 On an NSLU2, to drive a first generation Griffin iMic:
